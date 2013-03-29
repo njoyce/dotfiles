@@ -9,6 +9,8 @@ Bundle 'gmarik/vundle'
 
 " My bundles
 Bundle 'tpope/vim-fugitive'
+Bundle 'nvie/vim-flake8'
+Bundle 'jmcantrell/vim-virtualenv'
 "  Bundle 'tpope/vim-surround'
 " Bundle 'tpope/vim-rake'
 " Bundle 'vim-ruby/vim-ruby'
@@ -31,7 +33,7 @@ Bundle 'klen/python-mode'
 "Bundle 'Lokaltog/vim-powerline'
 "Bundle 'xolox/vim-notes'
 "Bundle 'duff/vim-scratch'
-"Bundle 'vim-scripts/TaskList.vim'
+Bundle 'vim-scripts/TaskList.vim'
 
 filetype plugin indent on
 
@@ -151,8 +153,8 @@ let maplocalleader = "\\"
 "" Less chording
 "nnoremap ; :
 
-"" Faster Esc
-"inoremap jj <esc>
+" Faster Esc
+inoremap jj <esc>
 
 "" toggle current column highlight shortcut
 "map <leader>c :set cursorcolumn!<cr>
@@ -208,18 +210,23 @@ let maplocalleader = "\\"
 "" EDITING"
 "" **************************************************
 
-"" auto complete
-"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType mustache set omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType mako set omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType jst set omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-"autocmd FileType c set omnifunc=ccomplete#Completej
+" auto complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType mustache set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType mako set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType jst set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType c set omnifunc=ccomplete#Complete
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+inoremap <Nul> <C-x><C-o>
 set completeopt=menuone
 
 "" Clean whitespace
 "map <leader>W  :%s/\s\+$//<cr>:let @/=''<CR>
+
+highlight WhitespaceEOL ctermbg=red guibg=red
+match WhitespaceEOL /\s\+$/
 
 "" Dammit, Slimv
 "map <leader>WW :%s/\s\+$//<cr>:let @/=''<CR>
@@ -314,8 +321,8 @@ colorscheme jellybeans
 
 "" Python
 "" Rope
-"map <leader>j :RopeGotoDefinition<CR>
-"map <leader>d :RopeShowDoc<CR>
+map <leader>j :RopeGotoDefinition<CR>
+map <leader>d :RopeShowDoc<CR>
 let ropevim_enable_shortcuts = 0
 let ropevim_guess_project = 1
 let ropevim_global_prefix = '<C-c>p'
@@ -349,19 +356,19 @@ augroup END
 "" PLUGINS
 
 "" Task list
-"map <leader>td <Plug>TaskList
+map <leader>td <Plug>TaskList
 
 "" Makegreen
 "map <localleader>t :call MakeGreen()<cr>
 
 "" Fugitive
-"set statusline=%{fugitive#statusline()}
+set statusline=%{fugitive#statusline()}
 
-"augroup ft_fugitive
-    "au!
+augroup ft_fugitive
+    au!
 
-    "au BufNewFile,BufRead .git/index setlocal nolist
-"augroup END
+    au BufNewFile,BufRead .git/index setlocal nolist
+augroup END
 
 "" HTML5
 "let g:event_handler_attributes_complete = 0
@@ -450,17 +457,17 @@ let NERDTreeWinSize = 30
 "endfunction
 "nmap <leader>gw :call GitGrepWord()<CR>"
 
-"" Ctrlp
-"map <leader>p :CtrlP()<CR>
-"let g:ctrlp_cmd = 'CtrlP'
+" Ctrlp
+map <leader>p :CtrlP()<CR>
+let g:ctrlp_cmd = 'CtrlP'
 "let g:ctrlp_match_window_bottom = 0
 "let g:ctrlp_match_window_reversed = 0
 "let g:ctrlp_working_path_mode = 2
 "let g:ctrlp_max_height = 30
-"let g:ctrlp_custom_ignore = {
-    "\ 'dir':  '\.git$\|\.hg$\|\.svn$|\bin$\|\test-reports$\|\.externalToolBuilders$\|\.idea$\|\.ropeproject$\',
-    "\ 'file': '\.exe$\|\.mxml$\|\.dll$|\.pyc$\|\.swc$\',
-"\ }
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$|\bin$\|\test-reports$\|\.externalToolBuilders$\|\.idea$\|\.ropeproject$\',
+    \ 'file': '\.exe$\|\.mxml$\|\.dll$|\.pyc$\|\.swc$\',
+\ }
 
 "" Notes
 "let g:notes_suffix = ".txt"
@@ -502,3 +509,6 @@ let NERDTreeWinSize = 30
     "let VimuxUseNearestPane = 1
     "let g:VimuxOrientation = "h"
 "endif
+
+" enable flake8 reporting after writing a file
+autocmd BufWritePost *.py call Flake8()
