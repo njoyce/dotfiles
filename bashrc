@@ -78,7 +78,7 @@ if [ -e "$HOME/bin/git-completion.bash" ]; then
     source "$HOME/bin/git-completion.bash"
 fi;
 
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
+export PATH=/usr/local/share/npm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH
 export PATH=$HOME/bin:$PATH
 
 # VirtualEnv
