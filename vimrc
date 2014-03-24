@@ -22,7 +22,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 "Bundle 'Townk/vim-autoclose'
 "Bundle 'vim-scripts/Rainbow-Parenthesis'
-"Bundle 'kchmck/vim-coffee-script'
+Bundle 'kchmck/vim-coffee-script'
 "Bundle 'pangloss/vim-javascript'
 Bundle 'kien/ctrlp.vim'
 "Bundle 'benmills/vimux'
@@ -186,25 +186,25 @@ inoremap jj <esc>
 "" quick buffer list
 :nnoremap <C-b> :buffers<CR>:buffer<Space>
 
-"if has("autocmd")
-    "" Enable file type detection
-    "filetype on
+if has("autocmd")
+    " Enable file type detection
+    filetype on
 
-    "" Syntax of these languages is fussy over tabs vs spaces
-    "autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-    "autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+    " Syntax of these languages is fussy over tabs vs spaces
+    autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
-    "" Customisations base on preference
-    "autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
-    "autocmd FileType mustache setlocal ts=2 sts=2 sw=2 expandtab
-    "autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-    "autocmd FileType less setlocal ts=2 sts=2 sw=2 expandtab
-    "autocmd FileType javascript setlocal ts=2 sts=2 sw=2 noexpandtab
-    "autocmd FileType coffeescript setlocal ts=4 sts=4 sw=4 noexpandtab
-    "autocmd FileType mako setlocal ts=2 sts=2 sw=2 noexpandtab
-    "autocmd FileType jst setlocal ts=2 sts=2 sw=2 noexpandtab
-    
-"endif
+    " Customisations base on preference
+    autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType mustache setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType less setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType javascript setlocal ts=2 sts=2 sw=2 noexpandtab
+    autocmd FileType coffeescript setlocal ts=4 sts=4 sw=4 noexpandtab
+    autocmd FileType mako setlocal ts=2 sts=2 sw=2 noexpandtab
+    autocmd FileType jst setlocal ts=2 sts=2 sw=2 noexpandtab
+
+endif
 
 
 "" EDITING"
@@ -277,8 +277,8 @@ noremap <C-l>  <C-w>l
 noremap <leader>v <C-w>v
 
 "" tabs
-"for i in range(1, 9) 
-    "exec "nnoremap <D-".i."> ".i."gt" 
+"for i in range(1, 9)
+    "exec "nnoremap <D-".i."> ".i."gt"
 "endfor"
 
 "" FONT
@@ -298,7 +298,7 @@ colorscheme jellybeans
 ""colorscheme tomorrow_night
 "set t_Co=256
 
-"" Enable fancy mode 
+"" Enable fancy mode
 "let g:Powerline_symbols = 'fancy'   " Powerline
 
 "" ABBREVATIONS AND SPELLING
