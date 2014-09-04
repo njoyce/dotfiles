@@ -92,3 +92,8 @@ export PIP_RESPECT_VIRTUALENV=true
 
 source /usr/local/bin/virtualenvwrapper.sh
 source $HOME/.bash_aliases
+
+export GOPATH=~/go
+export GOROOT=/usr/local/Cellar/go/1.2.1/libexec
+export PATH=~/dev/go/bin:$GOROOT/bin:$PATH
+export JAVA_HOME="$(/usr/libexec/java_home)"

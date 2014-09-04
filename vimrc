@@ -11,28 +11,15 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'nvie/vim-flake8'
 Bundle 'jmcantrell/vim-virtualenv'
-"  Bundle 'tpope/vim-surround'
-" Bundle 'tpope/vim-rake'
-" Bundle 'vim-ruby/vim-ruby'
+Bundle 'faith/vim-go'
 Bundle 'ervandew/supertab'
-" Bundle 'sjl/gundo.vim'
-" Bundle 'reinh/vim-makegreen'
 Bundle 'vim-scripts/The-NERD-tree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
-"Bundle 'Townk/vim-autoclose'
-"Bundle 'vim-scripts/Rainbow-Parenthesis'
 Bundle 'kchmck/vim-coffee-script'
-"Bundle 'pangloss/vim-javascript'
+Bundle 'pangloss/vim-javascript'
 Bundle 'kien/ctrlp.vim'
-"Bundle 'benmills/vimux'
-"Bundle 'myusuf3/numbers.vim'
 Bundle 'klen/python-mode'
-"Bundle 'vim-scripts/ZoomWin'
-"Bundle 'jeetsukumaran/vim-buffergator'
-"Bundle 'Lokaltog/vim-powerline'
-"Bundle 'xolox/vim-notes'
-"Bundle 'duff/vim-scratch'
 Bundle 'vim-scripts/TaskList.vim'
 
 filetype plugin indent on
@@ -512,3 +499,6 @@ let g:ctrlp_custom_ignore = {
 
 " enable flake8 reporting after writing a file
 autocmd BufWritePost *.py call Flake8()
+
+let g:go_bin_path = "/usr/local/bin/go"
+let g:go_disable_autoinstall = 1
