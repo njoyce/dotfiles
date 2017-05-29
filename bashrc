@@ -94,6 +94,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 source $HOME/.bash_aliases
 
 export GOPATH=~/go
-export GOROOT=/usr/local/Cellar/go/1.2.1/libexec
+export GOROOT=/usr/local/Cellar/go/1.6/libexec
 export PATH=~/dev/go/bin:$GOROOT/bin:$PATH
+export PATH=$(brew --prefix ruby)/bin:$PATH
 export JAVA_HOME="$(/usr/libexec/java_home)"

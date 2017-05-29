@@ -1,27 +1,29 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
 " start vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " My bundles
-Bundle 'tpope/vim-fugitive'
-Bundle 'nvie/vim-flake8'
-Bundle 'jmcantrell/vim-virtualenv'
-Bundle 'faith/vim-go'
-Bundle 'ervandew/supertab'
-Bundle 'vim-scripts/The-NERD-tree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/syntastic'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'pangloss/vim-javascript'
-Bundle 'kien/ctrlp.vim'
-Bundle 'klen/python-mode'
-Bundle 'vim-scripts/TaskList.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'nvie/vim-flake8'
+Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'faith/vim-go'
+Plugin 'ervandew/supertab'
+Plugin 'vim-scripts/The-NERD-tree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'pangloss/vim-javascript'
+Plugin 'kien/ctrlp.vim'
+Plugin 'klen/python-mode'
+Plugin 'vim-scripts/TaskList.vim'
+Plugin 'ElmCast/elm-vim'
 
+call vundle#end()
 filetype plugin indent on
 
 " The basics
@@ -316,6 +318,7 @@ let ropevim_global_prefix = '<C-c>p'
 
 let g:pymode_folding = 0
 let g:pymode_lint = 0
+let g:pymode_rope_lookup_project = 0
 
 "" Pyflakes
 let g:pyflakes_use_quickfix = 0
