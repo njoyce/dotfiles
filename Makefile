@@ -1,4 +1,5 @@
-all: bash vim tmux python node golang gcloud chrome apps
+all: bash vim tmux python docker node golang gcloud chrome apps
+	brew cask install java
 
 bash:
 	brew install bash
