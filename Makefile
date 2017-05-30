@@ -11,7 +11,7 @@ bash:
 	brew cask install iterm2
 
 tmux:
-	brew install tmux
+	brew install tmux reattach-to-user-namespace
 	ln -s `pwd`/tmux.conf ~/.tmux.conf
 
 git:
