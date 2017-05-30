@@ -24,6 +24,10 @@ python:
 	pip install --upgrade setuptools pip wheel
 	pip install virtualenvwrapper
 
+docker:
+	brew cask install docker
+	open /Applications/Docker.app
+
 node:
 	brew install yarn nodejs
 
