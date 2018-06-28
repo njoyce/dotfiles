@@ -1,0 +1,7 @@
+*.o
+*.pyc
+*.pyo
+*.bak
+.DS_Store
+home/.vim/bundle
+home/.vim/colors

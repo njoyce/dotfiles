@@ -1,34 +1,19 @@
 set nocompatible
-filetype off
+set encoding=utf-8
 
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
+let $PATH .= ':' . expand('~/.bin')
 
-" start vundle
-Plugin 'gmarik/Vundle.vim'
+source ~/.vim/vundle-config.vim
 
-" My bundles
-Plugin 'tpope/vim-fugitive'
-Plugin 'nvie/vim-flake8'
-Plugin 'jmcantrell/vim-virtualenv'
-Plugin 'faith/vim-go'
-Plugin 'ervandew/supertab'
-Plugin 'vim-scripts/The-NERD-tree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'pangloss/vim-javascript'
-Plugin 'kien/ctrlp.vim'
-Plugin 'klen/python-mode'
-Plugin 'vim-scripts/TaskList.vim'
-Plugin 'ElmCast/elm-vim'
+" Set filetype stuff to on
+filetype on
+filetype plugin on
+filetype indent on
 
-call vundle#end()
-filetype plugin indent on
+" Display extra whitespace
 
 " The basics
 syn on
-set encoding=utf-8
 set modelines=0
 set autoindent
 set showmode
@@ -47,8 +32,7 @@ set undolevels=999
 set undofile
 set undoreload=10000
 set cpoptions+=J
-"set list off
-"set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+set list listchars=tab:»·,trail:·
 set shell=/bin/bash
 set lazyredraw
 set matchtime=3
@@ -86,9 +70,9 @@ set colorcolumn=+1
 set copyindent
 
 " backups
-set undodir=/var/tmp/vim/undo//     " undo files
-set backupdir=/var/tmp/vim/backup// " backups
-set directory=/var/tmp/vim/swap//   " swap files
+set undodir=/var/tmp/vim/undo/     " undo files
+set backupdir=/var/tmp/vim/backup/ " backups
+set directory=/var/tmp/vim/swap/   " swap files
 
 set ignorecase
 set smartcase
@@ -505,3 +489,5 @@ autocmd BufWritePost *.py call Flake8()
 
 let g:go_bin_path = "/usr/local/bin/go"
 let g:go_disable_autoinstall = 1
+
+let g:rustfmt_autosave = 1

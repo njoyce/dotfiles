@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-source $HOME/bin/bash_colours.sh
+source $HOME/.bin/bash_colours.sh
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -22,13 +22,6 @@ case "$TERM" in
     xterm-color) color_prompt=yes;;
     xterm-256color) color_prompt=yes;;
 esac
-
-alias ls="BLOCK_SIZE=\'1 ls -G" 
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -82,7 +75,7 @@ export PATH=/usr/local/share/npm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbi
 export PATH=$HOME/bin:$PATH
 
 # VirtualEnv
-# 
+#
 # Setting up the VirtualEnv
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
@@ -94,7 +87,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 source $HOME/.bash_aliases
 
 export GOPATH=~/go
-export GOROOT=/usr/local/Cellar/go/1.6/libexec
+export GOROOT=/usr/local/opt/go/libexec
 export PATH=~/dev/go/bin:$GOROOT/bin:$PATH
 export PATH=$(brew --prefix ruby)/bin:$PATH
 export JAVA_HOME="$(/usr/libexec/java_home)"
